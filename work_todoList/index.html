@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="todo">
+        <div class="todo-content">
+            <h1 class="todo-title">Все задачи</h1>
+            
+            <div class="todo-new">
+                <input id="new" type="text" placeholder="Добавить новую задачу">
+                <div id="add" class="todo-add">+</div>
+            </div>
+            
+            <div class="todo-task-count">
+                <span>Всего задач:</span>
+                <strong id="count">0</strong>
+            </div>
+            
+            <div id="tasks" class="todo-list">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --default: rgba(0,0,0,0.3);
+    --accent: #EA5959;
+}
+
+body{
+    background-color: var(--accent);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.todo{
+    padding: 32px;
+    background-color: white ;
+    width: 90vw;
+    border-radius: 15px;
+}
+
+
+
+.todo-new {
+    --size: 50px; /* переменная */
+    display: flex;
+    margin: 16px 0 ;
+}
+
+.todo-new input{
+    margin-right: 16px;
+    font-size: 18px;
+    padding: 8px;
+    height:  var( --size);
+    border: 1px solid var(--default);
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+.todo-add, 
+.todo-task-del {
+    text-align: center;
+    width:  var( --size);
+    height:  var( --size);
+    border-radius: var(--size) ;
+    line-height: calc(var(--size)*0.9); /* сделать + по центру*/
+    font-size: 32px;  /* задать размер + */
+    font-weight: 200;
+    background: var(--accent) ;
+    color: white;
+    /* border: 1px solid var(--default) ; обводка вокруг + */
+    cursor: pointer;
+}
+.todo-list{
+    margin-top: 15px;
+}
+
+.todo-list >*:not(:last-child){
+    margin-bottom: 7px;
+}
+.todo-task {
+    cursor: default;
+    --size: 35px;
+    display: flex;
+    min-height: var(--size);
+    align-items: center;
+}
+.todo-task:hover .todo-task-del{
+    display: block;
+}
+.todo-task_completed .todo-task-text{
+text-decoration: line-through;
+color: var(--default);
+}
+.todo-checkbox {
+    margin-right: 15px;
+}
+.todo-checkbox input{
+    display: none;
+}
+.todo-checkbox input:checked + div{
+    background-color: var(--accent);
+}
+.todo-checkbox input:checked + div::after{
+    display: block;
+}
+.todo-checkbox div{
+    --size: 28px;
+    cursor: pointer;
+    height: var(--size);
+    width: var(--size);
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    position: relative;
+    color: white;
+}
+.todo-checkbox div::after{
+    text-align: center;
+    content: '\2713'; /* галочка */ 
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.todo-task-text {
+    font-size: 20px;
+}
+.todo-task-del {
+   display: none;
+   margin-left: auto;
+   margin-right: 0;
+   font-size: 45px;
+   line-height: calc(var(--size)*0.88); /* сделать + по центру*/
+}
+
